@@ -1,0 +1,7 @@
+.recommendation-container {
+	width: 95%;
+	height: 20rem;
+	border: 1px solid black;
+	margin: 10px auto;
+	text-align: center;
+}

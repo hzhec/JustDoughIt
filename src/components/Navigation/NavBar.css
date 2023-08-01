@@ -1,0 +1,62 @@
+nav {
+	display: flex;
+	border-bottom: 2px solid rgb(255, 204, 110);
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	z-index: 999;
+	width: 97%;
+	background: rgba(255, 242, 224, 0.725);
+}
+
+input {
+	padding: 7px 20px;
+	border: none;
+	background: rgb(255, 250, 241);
+	outline: 1px solid rgb(255, 221, 159);
+	margin: 0rem 2rem;
+	border-radius: 5px;
+	position: relative;
+	width: 25rem;
+}
+
+.shop-icon {
+	width: 3rem;
+	height: 3rem;
+	color: rgb(255, 147, 31);
+}
+
+.nav-icons {
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-left: 1.2rem;
+	color: rgb(255, 147, 31);
+}
+
+.shop-container {
+	margin: 0 2rem 0 1rem;
+}
+
+.shop-container a {
+	display: flex;
+	align-items: center;
+}
+
+.shop-text {
+	margin: 9px;
+	font-family: sans-serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 1.4rem;
+	color: rgb(255, 147, 31);
+	-webkit-text-stroke: 1px rgb(236, 166, 114);
+}
+
+.user-container {
+	margin: 0 2rem;
+	display: flex;
+}
+
+.search-container {
+	cursor: pointer;
+}
