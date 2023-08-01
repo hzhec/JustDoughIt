@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import "./Products.css";
 
 // pastry data includes category, currentPrice, description, imgUrl, rating, title, usualPrice

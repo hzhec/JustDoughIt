@@ -10,11 +10,17 @@ import { useEffect, useState } from "react";
 
 function App() {
 	const [productsArray, setProductsArray] = useState([]);
+	const [recProductArray, setRecProductArray] = useState([]);
 
 	useEffect(() => {
 		getPastriesData()
 			.then((data) => {
 				for (let i = 0; i < data.length; i++) {
+					if (data[i].recommendation === true) {
+						setRecProductArray((prev) => {
+							return [...prev, { ...data[i] }];
+						});
+					}
 					setProductsArray((prev) => {
 						return [...prev, { ...data[i] }];
 					});
@@ -27,7 +33,7 @@ function App() {
 	return (
 		<div className="main-container">
 			<NavBar />
-			<Recommendation />
+			<Recommendation recProductArr={recProductArray} />
 			<div className="product-container">
 				<SideBar />
 				{/* {console.log("allProduct", productsArray)} */}
