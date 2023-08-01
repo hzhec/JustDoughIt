@@ -1,10 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "./Recommendation.css";
 
 const Recommendation = (props) => {
 	const [currentProduct, setCurrentProduct] = useState(0);
 	const productLength = props.recProductArr.length;
+	const timeRef = useRef(null);
+
+	const resetTimeOut = () => {
+		if (timeRef.current !== null) {
+			clearTimeout(timeRef.current);
+		}
+	};
+
+	useEffect(() => {
+		resetTimeOut();
+		timeRef.current = setTimeout(() => {
+			setCurrentProduct(
+				currentProduct === productLength - 1 ? 0 : currentProduct + 1
+			);
+		}, 6000);
+
+		return () => {
+			resetTimeOut();
+		};
+	}, [currentProduct]);
 
 	const nextSlide = () => {
 		setCurrentProduct(
@@ -18,7 +38,7 @@ const Recommendation = (props) => {
 		);
 	};
 
-	if (!Array.isArray(props.recProductArr) || props.recProductArr.length <= 0) {
+	if (!Array.isArray(props.recProductArr) || productLength <= 0) {
 		return null;
 	}
 
