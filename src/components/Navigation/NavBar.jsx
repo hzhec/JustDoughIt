@@ -17,7 +17,7 @@ const NavBar = () => {
 			<div className="shop-container">
 				<a href="#">
 					<MdOutlineBakeryDining className="shop-icon" />
-					<div className="shop-text">Just Dough It</div>
+					<div className="shop-text">JustDoughIt</div>
 				</a>
 			</div>
 

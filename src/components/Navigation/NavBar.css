@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 nav {
 	display: flex;
 	border-bottom: 2px solid rgb(255, 204, 110);
@@ -45,12 +47,12 @@ input {
 
 .shop-text {
 	margin: 9px;
-	font-family: sans-serif;
+	font-family: "Indie Flower", cursive;
 	font-style: italic;
 	font-weight: bold;
-	font-size: 1.4rem;
-	color: rgb(255, 147, 31);
-	-webkit-text-stroke: 1px rgb(236, 166, 114);
+	font-size: 30px;
+	color: rgb(255, 138, 14);
+	-webkit-text-stroke: 1px rgb(255, 143, 58);
 }
 
 .user-container {
