@@ -8,4 +8,13 @@
 
 li {
 	margin: 5px;
+	font-size: 20px;
+	padding: 2px;
+}
+
+li:hover {
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 20px;
+	color: rgb(255, 153, 0);
 }

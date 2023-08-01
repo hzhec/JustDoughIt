@@ -18,10 +18,14 @@
 	margin: 30px auto 30px auto;
 }
 
+.content-container h1 {
+	font-size: 45px;
+}
+
 .header-sidebar {
 	grid-area: head1;
 	text-align: center;
-	margin: 20px auto;
+	margin: 15px auto;
 }
 
 .sidebar-container {
@@ -31,7 +35,7 @@
 .header-product {
 	grid-area: head2;
 	text-align: center;
-	margin: 20px auto;
+	margin: 15px auto;
 }
 
 .product-container {
