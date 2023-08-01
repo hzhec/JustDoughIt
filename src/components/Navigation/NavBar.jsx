@@ -20,19 +20,20 @@ const NavBar = () => {
 					<div className="shop-text">Just Dough It</div>
 				</a>
 			</div>
-			{searchToggle ? (
-				<div className="nav-container">
-					<input
-						className="search-input"
-						type="text"
-						placeholder="Search"
-					/>
-				</div>
-			) : (
-				""
-			)}
+
+			<div
+				className="search-container"
+				style={
+					searchToggle
+						? { visibility: "visible" }
+						: { visibility: "hidden" }
+				}
+			>
+				<input className="search-input" type="text" placeholder="Search" />
+			</div>
+
 			<div className="user-container">
-				<div className="search-container" onClick={clickHandler}>
+				<div className="search-icon" onClick={clickHandler}>
 					<FaSearch className="nav-icons" />
 				</div>
 				<a href="#">
