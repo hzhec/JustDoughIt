@@ -3,17 +3,35 @@ import Recommendation from "./components/Recommendation/Recommendation";
 import Products from "./components/Products/Products";
 import SideBar from "./components/Sidebar/Sidebar";
 import "./App.css";
-import { pastriesData } from "./components/pastries-data";
+// import { pastriesData } from "./components/pastries-data";
+// import allProducts from "./components/pastries-data";
+import { getPastriesData } from "./firebase/firebaseData";
+import { useEffect, useState } from "react";
 
 function App() {
+	const [productsArray, setProductsArray] = useState([]);
+
+	useEffect(() => {
+		getPastriesData()
+			.then((data) => {
+				for (let i = 0; i < data.length; i++) {
+					setProductsArray((prev) => {
+						return [...prev, { ...data[i] }];
+					});
+					// console.log(data[i]);
+				}
+			})
+			.catch((error) => console.log(error));
+	}, []);
+
 	return (
 		<div className="main-container">
 			<NavBar />
 			<Recommendation />
 			<div className="product-container">
 				<SideBar />
-				<Products />
-				{pastriesData()}
+				{/* {console.log("allProduct", productsArray)} */}
+				<Products productArr={productsArray} />
 			</div>
 		</div>
 	);

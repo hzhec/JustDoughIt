@@ -1,7 +1,40 @@
 .products {
 	width: 70%;
-	height: 20rem;
+	/* height: 20rem; */
 	border: 1px solid black;
-	margin: 0px auto;
+	margin: 0px auto 30px auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.product {
+	/* border: 1px solid black; */
+	width: 200px;
+	height: 200px;
+	margin: 15px;
+}
+.product-overlay {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	background: rgb(255, 255, 255);
+	opacity: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 25px;
+	font-weight: bold;
 	text-align: center;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 20px;
+}
+
+.product:hover .product-overlay {
+	opacity: 0.7;
 }
