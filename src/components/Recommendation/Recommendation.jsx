@@ -62,7 +62,7 @@ const Recommendation = (props) => {
 								{index === currentProduct && (
 									<div className="product-image">
 										<div className="image-title-overlay">
-											{product.title}
+											<h3>{product.title}</h3>
 										</div>
 										<img src={product.imgUrl} alt={product.title} />
 									</div>

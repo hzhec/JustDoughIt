@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 .products {
 	width: 100%;
 	/* min-width: 500px; */
@@ -41,6 +43,7 @@
 	text-shadow: 3px 2px 4px rgb(139, 139, 139);
 	overflow: hidden;
 	transition: 0.5s ease;
+	font-family: "Indie Flower", cursive;
 }
 
 .product img {
