@@ -34,10 +34,17 @@ function App() {
 		<div className="main-container">
 			<NavBar />
 			<Recommendation recProductArr={recProductArray} />
-			<div className="product-container">
-				<SideBar />
+			<div className="content-container">
+				<div className="sidebar-container">
+					<SideBar />
+				</div>
 				{/* {console.log("allProduct", productsArray)} */}
-				<Products productArr={productsArray} />
+				<div className="header-container">
+					<h1>All Products</h1>
+				</div>
+				<div className="product-container">
+					<Products productArr={productsArray} />
+				</div>
 			</div>
 		</div>
 	);

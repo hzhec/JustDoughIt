@@ -1,11 +1,15 @@
 .products {
-	width: 70%;
+	width: 100%;
+	/* min-width: 500px; */
 	/* height: 20rem; */
-	border: 1px solid black;
+	/* border: 1px solid black; */
+	border-radius: 20px;
 	margin: 0px auto 30px auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 245px);
+	place-items: center;
+	justify-content: center;
+	background: #ffc4784a;
 }
 
 .product {
@@ -14,6 +18,11 @@
 	height: 200px;
 	margin: 15px;
 }
+
+.product-header {
+	width: 100%;
+}
+
 .product-overlay {
 	width: 200px;
 	height: 200px;
@@ -26,6 +35,8 @@
 	font-size: 25px;
 	font-weight: bold;
 	text-align: center;
+	border-radius: 20px;
+	text-shadow: 3px 2px 4px rgb(139, 139, 139);
 }
 
 .product img {
@@ -37,5 +48,6 @@
 }
 
 .product:hover .product-overlay {
-	opacity: 0.7;
+	opacity: 1;
+	background: rgba(255, 255, 255, 0.55);
 }

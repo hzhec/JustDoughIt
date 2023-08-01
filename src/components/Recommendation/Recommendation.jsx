@@ -24,7 +24,7 @@ const Recommendation = (props) => {
 		return () => {
 			resetTimeOut();
 		};
-	}, [currentProduct]);
+	}, [currentProduct, productLength]);
 
 	const nextSlide = () => {
 		setCurrentProduct(

@@ -5,9 +5,29 @@
 	/* padding: 0px auto; */
 }
 
+.content-container {
+	width: 80%;
+	display: grid;
+	grid-template-areas:
+		"side head"
+		"side main"
+		"side main";
+	/* justify-content: space-around; */
+	grid-template-columns: 0.4fr 1fr;
+	column-gap: 40px;
+	margin: 30px auto 30px auto;
+}
+
+.sidebar-container {
+	grid-area: side;
+}
+
+.header-container {
+	grid-area: head;
+	text-align: center;
+	margin: 20px auto;
+}
+
 .product-container {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	margin: 10px auto 30px auto;
+	grid-area: main;
 }

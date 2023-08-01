@@ -7,6 +7,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore.js";
 
 // Reference from "pastriesData" collection database
+// Images taken from unsplash.com
 const pastriesRef = collection(db, "pastriesData");
 
 export const getPastriesData = async () => {
