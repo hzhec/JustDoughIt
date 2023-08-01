@@ -1,5 +1,11 @@
 .sidebar {
-	border: 1px solid black;
 	width: 100%;
-	text-align: center;
+	text-align: left;
+	padding: 20px;
+	border-radius: 20px;
+	background: #ffc4784a;
+}
+
+li {
+	margin: 5px;
 }

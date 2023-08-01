@@ -6,7 +6,9 @@
 	border-radius: 20px;
 	margin: 0px auto 30px auto;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, 245px);
+	grid-template-columns: repeat(auto-fit, 220px);
+	column-gap: 40px;
+	row-gap: 10px;
 	place-items: center;
 	justify-content: center;
 	background: #ffc4784a;
@@ -17,6 +19,7 @@
 	width: 200px;
 	height: 200px;
 	margin: 15px;
+	cursor: pointer;
 }
 
 .product-header {
@@ -25,10 +28,9 @@
 
 .product-overlay {
 	width: 200px;
-	height: 200px;
+	height: 0px;
 	position: absolute;
-	background: rgb(255, 255, 255);
-	opacity: 0;
+	background: rgb(255, 255, 255, 0.55);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -37,6 +39,8 @@
 	text-align: center;
 	border-radius: 20px;
 	text-shadow: 3px 2px 4px rgb(139, 139, 139);
+	overflow: hidden;
+	transition: 0.5s ease;
 }
 
 .product img {
@@ -48,6 +52,6 @@
 }
 
 .product:hover .product-overlay {
-	opacity: 1;
+	height: 200px;
 	background: rgba(255, 255, 255, 0.55);
 }

@@ -9,7 +9,7 @@
 	width: 80%;
 	display: grid;
 	grid-template-areas:
-		"side head"
+		"head1 head2"
 		"side main"
 		"side main";
 	/* justify-content: space-around; */
@@ -18,12 +18,18 @@
 	margin: 30px auto 30px auto;
 }
 
+.header-sidebar {
+	grid-area: head1;
+	text-align: center;
+	margin: 20px auto;
+}
+
 .sidebar-container {
 	grid-area: side;
 }
 
-.header-container {
-	grid-area: head;
+.header-product {
+	grid-area: head2;
 	text-align: center;
 	margin: 20px auto;
 }
