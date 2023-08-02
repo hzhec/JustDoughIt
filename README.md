@@ -1,16 +1,14 @@
 # JustDoughIt
 
-A simple e-Commerce project that allows customers to buy pastries 'online'. 
+JustDoughIt is a simple web application using React that includes features such as product listings, shopping carts, order management and user accounts. 
 
 # Description 
 
-Run 'npm install' to install the necessary node modules packages. 
-Run 'npm run dev' to start development on http://localhost:5173
-
-JustDoughIt is a simple web application using React that includes features such as product listings, shopping carts, order management and user accounts. 
+Run `npm install` to install the necessary node modules packages.<br>
+Run `npm run dev` to start development on http://localhost:5173
 
 ### Technical Used
-- React using vite
+- React created using vite
 - Firebase for data API
 
 ### Wireframes 
