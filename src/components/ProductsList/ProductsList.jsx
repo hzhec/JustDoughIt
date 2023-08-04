@@ -1,8 +1,10 @@
-import "./Products.css";
+import "./ProductsList.css";
 
 // pastry data includes category, currentPrice, description, imgUrl, rating, title, usualPrice
-const Products = (props) => {
-	const product = props.productArr.map((product, index) => {
+const ProductsList = (props) => {
+	const allProducts = [...props.productArr];
+
+	const products = allProducts.map((product, index) => {
 		return (
 			<div className="product" key={index}>
 				<div className="product-overlay">{product.title}</div>
@@ -11,7 +13,7 @@ const Products = (props) => {
 		);
 	});
 
-	return <div className="products">{product}</div>;
+	return <div className="products">{products}</div>;
 };
 
-export default Products;
+export default ProductsList;

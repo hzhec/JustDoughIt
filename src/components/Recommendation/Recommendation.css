@@ -20,7 +20,7 @@
 }
 
 .slide img {
-	width: 90%;
+	width: 89%;
 	height: 28rem;
 	object-fit: cover;
 	object-position: 50% 70%;
@@ -80,7 +80,7 @@
 
 .image-title-overlay h3 {
 	background-color: rgba(255, 255, 255, 0.411);
-	font-size: 4.5vw;
+	font-size: 70px;
 	font-weight: bold;
 	width: 70%;
 }

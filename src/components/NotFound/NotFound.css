@@ -1,0 +1,27 @@
+.not-found {
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+.not-found h1 {
+	max-width: 700px;
+	margin: 80px auto;
+	font-size: 45px;
+	padding: 30px;
+	background-color: rgba(255, 140, 0, 0.5);
+	border-radius: 15px;
+}
+
+.not-found a {
+	max-width: 250px;
+	font-size: 20px;
+	border: 1px solid rgb(255, 140, 16);
+	color: rgb(255, 140, 16);
+	margin: 5px auto;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 15px;
+}

@@ -1,24 +1,30 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingBasket, FaUser, FaSearch } from "react-icons/fa";
 import { MdOutlineBakeryDining } from "react-icons/md";
 
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
 	const [searchToggle, setSearchToggle] = useState(false);
+	const enteredInput = useRef();
 
 	const clickHandler = () => {
 		setSearchToggle((prev) => !prev);
 	};
 
+	const formHandler = (event) => {
+		event.preventDefault();
+	};
+
 	return (
 		<nav>
 			<div className="shop-container">
-				<a href="#">
+				<Link to="/">
 					<MdOutlineBakeryDining className="shop-icon" />
 					<div className="shop-text">JustDoughIt</div>
-				</a>
+				</Link>
 			</div>
 
 			<div
@@ -29,22 +35,29 @@ const NavBar = () => {
 						: { visibility: "hidden" }
 				}
 			>
-				<input className="search-input" type="text" placeholder="Search" />
+				<form onSubmit={formHandler}>
+					<input
+						className="search-input"
+						type="text"
+						placeholder="Search"
+						ref={enteredInput}
+					/>
+				</form>
 			</div>
 
 			<div className="user-container">
 				<div className="search-icon" onClick={clickHandler}>
 					<FaSearch className="nav-icons" />
 				</div>
-				<a href="#">
+				<Link to="/favourites">
 					<FaHeart className="nav-icons" />
-				</a>
-				<a href="#">
+				</Link>
+				<Link to="/cart">
 					<FaShoppingBasket className="nav-icons" />
-				</a>
-				<a href="#">
+				</Link>
+				<Link to="/profile">
 					<FaUser className="nav-icons" />
-				</a>
+				</Link>
 			</div>
 		</nav>
 	);
