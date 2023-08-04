@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getPastriesData } from "../../firebase/firebaseData";
 import "./Product.css";
 
 const Product = () => {
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 	const { productTitle } = useParams();
-	// const { state } = useLocation();
 	const [productData, setProductData] = useState({});
 
 	useEffect(() => {
@@ -20,6 +19,10 @@ const Product = () => {
 			})
 			.catch((error) => console.log(error));
 	}, []);
+
+	const backHandler = () => {
+		navigate("/products");
+	};
 
 	return (
 		<>
@@ -70,6 +73,9 @@ const Product = () => {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div className="back-button">
+				<button onClick={backHandler}>See all products...</button>
 			</div>
 		</>
 	);

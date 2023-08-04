@@ -24,7 +24,6 @@ const ProductsList = () => {
 		return (
 			<Link
 				to={`/product/${product.title.replace(/\s/g, "")}`}
-				state={product}
 				className="product"
 				key={index}
 			>

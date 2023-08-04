@@ -124,9 +124,9 @@
 
 .input-cart input {
 	width: 80%;
-	height: 50px;
+	height: 30px;
 	text-align: center;
-	font-size: 25px;
+	font-size: 20px;
 }
 
 .cart-button {
@@ -134,12 +134,26 @@
 }
 
 .cart-button button {
-	font-size: 20px;
+	font-size: 15px;
 	border-radius: 10px;
 	background-color: rgb(255, 192, 125);
 	border: none;
 	width: 80%;
-	height: 50px;
+	height: 30px;
+}
+
+.back-button {
+	width: 30%;
+}
+
+.back-button button {
+	margin-top: 100px;
+	font-size: 15px;
+	border-radius: 10px;
+	background-color: rgb(255, 192, 125);
+	border: none;
+	width: 70%;
+	height: 30px;
 }
 
 @media (min-width: 390px) and (max-width: 1400px) {
@@ -201,5 +215,13 @@
 
 	.cart-button {
 		width: 90%;
+	}
+
+	.back-button {
+		width: 100%;
+	}
+
+	.back-button button {
+		width: 100%;
 	}
 }
