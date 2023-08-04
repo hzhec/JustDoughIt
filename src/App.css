@@ -6,15 +6,12 @@
 }
 
 .content-container {
-	width: 80%;
+	width: 90%;
 	margin: 30px auto 30px auto;
 }
 
-.content-container h1 {
-	font-size: 45px;
-}
-
-.header-product {
-	text-align: center;
-	margin: 15px auto;
+@media (min-width: 390px) and (max-width: 1400px) {
+	.content-container {
+		width: 100%;
+	}
 }

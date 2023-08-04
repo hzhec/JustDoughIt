@@ -79,7 +79,7 @@ const Recommendation = () => {
 								key={index}
 							>
 								{index === currentProduct && (
-									<div className="product-image">
+									<div className="rec-product-image">
 										<div className="image-title-overlay">
 											<h3>{product.title}</h3>
 										</div>
