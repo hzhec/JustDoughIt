@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import { getPastriesData } from "../../firebase/firebaseData";
 import "./Recommendation.css";
 
-const Recommendation = (props) => {
+const Recommendation = () => {
+	const [recProducts, setRecProducts] = useState([]);
 	const [currentProduct, setCurrentProduct] = useState(0);
-	const productLength = props.recProductArr.length;
+	const productLength = recProducts.length;
 	const timeRef = useRef(null);
 
 	const resetTimeOut = () => {
@@ -14,17 +16,31 @@ const Recommendation = (props) => {
 	};
 
 	useEffect(() => {
+		getPastriesData()
+			.then((data) => {
+				for (let i = 0; i < data.length; i++) {
+					if (data[i].recommendation === true) {
+						setRecProducts((prev) => {
+							return [...prev, { ...data[i] }];
+						});
+					}
+				}
+			})
+			.catch((error) => console.log(error));
+	}, []);
+
+	useEffect(() => {
 		resetTimeOut();
 		timeRef.current = setTimeout(() => {
 			setCurrentProduct(
 				currentProduct === productLength - 1 ? 0 : currentProduct + 1
 			);
-		}, 6000);
+		}, 5000);
 
 		return () => {
 			resetTimeOut();
 		};
-	}, [currentProduct, productLength]);
+	}, [currentProduct]);
 
 	const nextSlide = () => {
 		setCurrentProduct(
@@ -38,12 +54,15 @@ const Recommendation = (props) => {
 		);
 	};
 
-	if (!Array.isArray(props.recProductArr) || productLength <= 0) {
+	if (!Array.isArray(recProducts) || productLength <= 0) {
 		return null;
 	}
 
 	return (
 		<>
+			<div className="recommendation-header">
+				<h1>Recommendations</h1>
+			</div>
 			<div className="recommendation-container">
 				<FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
 				<FaArrowAltCircleRight
@@ -51,7 +70,7 @@ const Recommendation = (props) => {
 					onClick={nextSlide}
 				/>
 				<div className="image-container">
-					{props.recProductArr.map((product, index) => {
+					{recProducts.map((product, index) => {
 						return (
 							<div
 								className={

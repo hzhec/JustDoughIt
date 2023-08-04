@@ -4,6 +4,7 @@ import Favourites from "../Favourites/Favourites";
 import Cart from "../Cart/Cart";
 import UserProfile from "../UserProfile/UserProfile";
 import NotFound from "../NotFound/NotFound";
+import ProductsList from "../ProductsList/ProductsList";
 
 const Main = () => {
 	return (
@@ -13,6 +14,7 @@ const Main = () => {
 				<Route exact path="/favourites" element={<Favourites />} />
 				<Route exact path="/cart" element={<Cart />} />
 				<Route exact path="/profile" element={<UserProfile />} />
+				<Route path="/products" element={<ProductsList />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>

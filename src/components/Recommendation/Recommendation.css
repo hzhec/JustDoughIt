@@ -1,37 +1,49 @@
+.recommendation-header {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.recommendation-header h1 {
+	font-size: 45px;
+}
+
 .recommendation-container {
 	width: 95%;
-	height: 32rem;
+	height: 35rem;
 	/* border: 1px solid black; */
 	margin: 10px auto;
 	/* text-align: center; */
 	display: flex;
 	position: relative;
 	justify-content: center;
+	flex-direction: column;
 	/* align-items: center; */
 }
 
 .image-container {
 	width: 90%;
-	background: rgba(255, 225, 187, 0.726);
-	/* border-radius: 25px; */
+	height: 10rem;
+	/* background: rgba(255, 225, 187, 0.726); */
+	border-radius: 15px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .slide img {
-	width: 89%;
-	height: 28rem;
+	width: 90%;
+	height: 35rem;
 	object-fit: cover;
 	object-position: 50% 70%;
 	display: flex;
 	justify-content: center;
 	animation: zoom-in 4s ease;
+	border-radius: 25px;
 }
 
 .right-arrow {
 	position: absolute;
-	top: 50%;
+	top: 48%;
 	left: 42.5%;
 	font-size: 2rem;
 	z-index: 10;
@@ -42,7 +54,7 @@
 
 .left-arrow {
 	position: absolute;
-	top: 50%;
+	top: 48%;
 	right: 42.5%;
 	font-size: 2rem;
 	z-index: 10;
@@ -62,7 +74,7 @@
 
 .image-title-overlay {
 	width: 90%;
-	height: 30rem;
+	height: 35rem;
 	position: absolute;
 	display: flex;
 	justify-content: center;

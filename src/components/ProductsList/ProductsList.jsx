@@ -1,10 +1,25 @@
+import { getPastriesData } from "../../firebase/firebaseData";
+import { useEffect, useState } from "react";
 import "./ProductsList.css";
 
 // pastry data includes category, currentPrice, description, imgUrl, rating, title, usualPrice
-const ProductsList = (props) => {
-	const allProducts = [...props.productArr];
+const ProductsList = () => {
+	const [productsArray, setProductsArray] = useState([]);
 
-	const products = allProducts.map((product, index) => {
+	useEffect(() => {
+		getPastriesData()
+			.then((data) => {
+				for (let i = 0; i < data.length; i++) {
+					setProductsArray((prev) => {
+						return [...prev, { ...data[i] }];
+					});
+					// console.log(data[i]);
+				}
+			})
+			.catch((error) => console.log(error));
+	}, []);
+
+	const products = productsArray.map((product, index) => {
 		return (
 			<div className="product" key={index}>
 				<div className="product-overlay">{product.title}</div>
@@ -13,7 +28,16 @@ const ProductsList = (props) => {
 		);
 	});
 
-	return <div className="products">{products}</div>;
+	return (
+		<>
+			<div className="header-product">
+				<h1>All Products</h1>
+			</div>
+			<div className="product-container">
+				<div className="products">{products}</div>
+			</div>
+		</>
+	);
 };
 
 export default ProductsList;
