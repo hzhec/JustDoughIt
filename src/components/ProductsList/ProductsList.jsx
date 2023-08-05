@@ -1,13 +1,17 @@
 // import { getPastriesData } from "../../firebase/firebaseData";
-// import { useContext, useEffect, useState } from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import DataContext from "../pastries-data";
 import "./ProductsList.css";
 // pastry data includes category, currentPrice, description, imgUrl, rating, title, usualPrice
 const ProductsList = () => {
 	const dataContext = useContext(DataContext);
+	const [isLoading, setIsLoading] = useState(false);
 	// const [productsArray, setProductsArray] = useState([]);
+
+	setTimeout(() => {
+		setIsLoading(true);
+	}, 1200);
 
 	// useEffect(() => {
 	// 	console.log(getPastriesData());
@@ -42,7 +46,10 @@ const ProductsList = () => {
 				<h1>All Products</h1>
 			</div>
 			<div className="product-container">
-				<div className="products">{products}</div>
+				{isLoading && <div className="products">{products}</div>}
+				{!isLoading && (
+					<div className="loading-page">Loading all products...</div>
+				)}
 			</div>
 		</>
 	);

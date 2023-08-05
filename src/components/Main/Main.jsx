@@ -16,8 +16,8 @@ const Main = () => {
 				<Route exact path="/favourites" element={<Favourites />} />
 				<Route exact path="/cart" element={<Cart />} />
 				<Route exact path="/profile" element={<UserProfile />} />
-				<Route path="/products" element={<ProductsList />} />
-				<Route path="/product/:productTitle" element={<Product />} />
+				<Route exact path="/products" element={<ProductsList />} />
+				<Route exact path="/product/:productTitle" element={<Product />} />
 				<Route path="*" element={<NotFound />} />
 			</Routes>
 		</div>
