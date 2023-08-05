@@ -1,26 +1,29 @@
-import { getPastriesData } from "../../firebase/firebaseData";
-import { useEffect, useState } from "react";
+// import { getPastriesData } from "../../firebase/firebaseData";
+// import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import "./ProductsList.css";
 import { Link } from "react-router-dom";
-
+import DataContext from "../pastries-data";
 // pastry data includes category, currentPrice, description, imgUrl, rating, title, usualPrice
 const ProductsList = () => {
-	const [productsArray, setProductsArray] = useState([]);
+	const dataContext = useContext(DataContext);
+	// const [productsArray, setProductsArray] = useState([]);
 
-	useEffect(() => {
-		getPastriesData()
-			.then((data) => {
-				for (let i = 0; i < data.length; i++) {
-					setProductsArray((prev) => {
-						return [...prev, { ...data[i] }];
-					});
-					// console.log(data[i]);
-				}
-			})
-			.catch((error) => console.log(error));
-	}, []);
+	// useEffect(() => {
+	// 	console.log(getPastriesData());
+	// 	getPastriesData()
+	// 		.then((data) => {
+	// 			for (let i = 0; i < data.length; i++) {
+	// 				setProductsArray((prev) => {
+	// 					return [...prev, { ...data[i] }];
+	// 				});
+	// 				// console.log(data[i]);
+	// 			}
+	// 		})
+	// 		.catch((error) => console.log(error));
+	// }, []);
 
-	const products = productsArray.map((product, index) => {
+	const products = dataContext.map((product, index) => {
 		return (
 			<Link
 				to={`/product/${product.title.replace(/\s/g, "")}`}

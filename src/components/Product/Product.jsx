@@ -1,24 +1,31 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getPastriesData } from "../../firebase/firebaseData";
+// import { getPastriesData } from "../../firebase/firebaseData";
 import "./Product.css";
+import DataContext from "../pastries-data";
 
 const Product = () => {
+	const dataContext = useContext(DataContext);
 	const navigate = useNavigate();
 	const { productTitle } = useParams();
-	const [productData, setProductData] = useState({});
+	// const [productData, setProductData] = useState({});
 
-	useEffect(() => {
-		getPastriesData()
-			.then((data) => {
-				for (let i = 0; i < data.length; i++) {
-					if (data[i].title.replace(/\s/g, "") === productTitle) {
-						setProductData({ ...data[i] });
-					}
-				}
-			})
-			.catch((error) => console.log(error));
-	}, []);
+	const [productData] = dataContext.filter(
+		(item) => item.title.replace(/\s/g, "") === productTitle
+	);
+
+	// useEffect(() => {
+	// 	getPastriesData()
+	// 		.then((data) => {
+	// 			for (let i = 0; i < data.length; i++) {
+	// 				if (data[i].title.replace(/\s/g, "") === productTitle) {
+	// 					setProductData({ ...data[i] });
+	// 				}
+	// 			}
+	// 		})
+	// 		.catch((error) => console.log(error));
+	// }, []);
 
 	const backHandler = () => {
 		navigate("/products");

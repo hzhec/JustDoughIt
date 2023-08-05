@@ -1,12 +1,13 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
-import { getPastriesData } from "../../firebase/firebaseData";
+// import { getPastriesData } from "../../firebase/firebaseData";
 import "./Recommendation.css";
+import DataContext from "../pastries-data";
 
 const Recommendation = () => {
-	const [recProducts, setRecProducts] = useState([]);
+	// const [recProducts, setRecProducts] = useState([]);
 	const [currentProduct, setCurrentProduct] = useState(0);
-	const productLength = recProducts.length;
+	const dataContext = useContext(DataContext);
 	const timeRef = useRef(null);
 
 	const resetTimeOut = () => {
@@ -15,19 +16,24 @@ const Recommendation = () => {
 		}
 	};
 
-	useEffect(() => {
-		getPastriesData()
-			.then((data) => {
-				for (let i = 0; i < data.length; i++) {
-					if (data[i].recommendation === true) {
-						setRecProducts((prev) => {
-							return [...prev, { ...data[i] }];
-						});
-					}
-				}
-			})
-			.catch((error) => console.log(error));
-	}, []);
+	const recProducts = dataContext.filter(
+		(item) => item.recommendation === true
+	);
+	const productLength = recProducts.length;
+
+	// useEffect(() => {
+	// 	getPastriesData()
+	// 		.then((data) => {
+	// 			for (let i = 0; i < data.length; i++) {
+	// 				if (data[i].recommendation === true) {
+	// 					setRecProducts((prev) => {
+	// 						return [...prev, { ...data[i] }];
+	// 					});
+	// 				}
+	// 			}
+	// 		})
+	// 		.catch((error) => console.log(error));
+	// }, []);
 
 	useEffect(() => {
 		resetTimeOut();
@@ -54,7 +60,7 @@ const Recommendation = () => {
 		);
 	};
 
-	if (!Array.isArray(recProducts) || productLength <= 0) {
+	if (!Array.isArray(dataContext) || productLength <= 0) {
 		return null;
 	}
 
