@@ -53,7 +53,6 @@
 }
 
 .price {
-	font-weight: bold;
 	font-size: 30px;
 }
 
@@ -70,11 +69,43 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-weight: bold;
 	font-size: 28px;
 	text-align: right;
 	padding: 5px 15px;
 	margin: 10px 0;
 	background-color: rgba(255, 255, 255, 0.623);
+	border-radius: 10px;
+}
+
+.actions {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cart-item button {
+	font-size: 20px;
+	color: #ff7a15;
+	border: 1px solid #ffab62;
+	background-color: rgba(255, 255, 255, 0.623);
+	width: 40px;
+	text-align: center;
+	border-radius: 6px;
+	cursor: pointer;
+	margin: 2px;
+}
+
+.cart-item button:hover,
+.cart-item button:active {
+	background-color: rgb(255, 192, 125);
+	color: white;
+}
+
+.no-items {
+	width: 600px;
+	margin: 100px auto;
+	font-size: 35px;
+	background-color: rgba(255, 209, 144, 0.6);
 	border-radius: 10px;
 }

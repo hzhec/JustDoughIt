@@ -140,9 +140,11 @@
 	font-size: 15px;
 	border-radius: 10px;
 	background-color: rgb(255, 192, 125);
-	border: none;
+	color: white;
+	border: 1px solid #ffab62;
 	width: 80%;
 	height: 30px;
+	cursor: pointer;
 }
 
 .back-button {
@@ -156,9 +158,19 @@
 	font-size: 15px;
 	border-radius: 10px;
 	background-color: rgb(255, 192, 125);
-	border: none;
+	color: white;
+	border: 1px solid #ffab62;
 	width: 70%;
 	height: 30px;
+	cursor: pointer;
+}
+
+.cart-button button:hover,
+.cart-button button:active,
+.back-button button:hover,
+.back-button button:active {
+	background-color: rgba(255, 255, 255, 0.9);
+	color: #ff7a15;
 }
 
 .loading-page {
