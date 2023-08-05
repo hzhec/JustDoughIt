@@ -1,19 +1,30 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 // import { getPastriesData } from "../../firebase/firebaseData";
-import DataContext from "../pastries-data";
+import CombinedContext from "../combined-context";
 import NotFound from "../NotFound/NotFound";
 import "./Product.css";
 
 const Product = () => {
-	const dataContext = useContext(DataContext);
+	const dataContext = useContext(CombinedContext);
 	const navigate = useNavigate();
+	const amountInputRef = useRef();
 	const { productTitle } = useParams();
 	const [isLoading, setIsLoading] = useState(true);
 
 	setTimeout(() => {
 		setIsLoading(false);
 	}, 1000);
+
+	const addToCartHandler = (product, amount) => {
+		dataContext.cart.addProduct({
+			title: product.title,
+			imgUrl: product.imgUrl,
+			currentPrice: product.currentPrice,
+			amount: amount,
+		});
+		// console.log(dataContext.cart);
+	};
 
 	// useEffect(() => {
 	// 	setIsLoading(true);
@@ -33,7 +44,7 @@ const Product = () => {
 	// 	return () => clearInterval(timer);
 	// }, []);
 
-	const selectedProduct = dataContext
+	const selectedProduct = dataContext.data
 		.filter((item) => item.title.replace(/\s/g, "") === productTitle)
 		.map((product, index) => {
 			return (
@@ -64,22 +75,35 @@ const Product = () => {
 
 						<div className="product-price">
 							<div className="product-usual-price">
-								Usual Price: <span>${product.usualPrice}</span>
+								Usual Price:{" "}
+								<span>${product.usualPrice.toFixed(2)}</span>
 							</div>
 							<div className="product-current-price">
-								<h3>Current Price: ${product.currentPrice}</h3>
+								<h3>
+									Current Price: ${product.currentPrice.toFixed(2)}
+								</h3>
 							</div>
 							<div className="add-to-cart">
 								<div className="input-cart">
 									<input
+										ref={amountInputRef}
 										type="number"
-										placeholder="1"
-										min={1}
-										max={10}
+										min="1"
+										max="10"
+										defaultValue="1"
 									></input>
 								</div>
 								<div className="cart-button">
-									<button>Add to Cart</button>
+									<button
+										onClick={() =>
+											addToCartHandler(
+												product,
+												parseInt(amountInputRef.current.value)
+											)
+										}
+									>
+										Add to Cart
+									</button>
 								</div>
 							</div>
 						</div>

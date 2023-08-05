@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 // import { getPastriesData } from "../../firebase/firebaseData";
-import DataContext from "../pastries-data";
+import CombinedContext from "../combined-context";
 import "./Recommendation.css";
 
 const Recommendation = () => {
 	// const [recProducts, setRecProducts] = useState([]);
 	const [currentProduct, setCurrentProduct] = useState(0);
-	const dataContext = useContext(DataContext);
+	const dataContext = useContext(CombinedContext);
 	const timeRef = useRef(null);
 
 	const resetTimeOut = () => {
@@ -16,7 +16,7 @@ const Recommendation = () => {
 		}
 	};
 
-	const recProducts = dataContext.filter(
+	const recProducts = dataContext.data.filter(
 		(item) => item.recommendation === true
 	);
 	const productLength = recProducts.length;
@@ -60,7 +60,7 @@ const Recommendation = () => {
 		);
 	};
 
-	if (!Array.isArray(dataContext) || productLength <= 0) {
+	if (!Array.isArray(dataContext.data) || productLength <= 0) {
 		return null;
 	}
 

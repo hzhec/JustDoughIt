@@ -1,8 +1,9 @@
 import { getPastriesData } from "./firebase/firebaseData";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import NavBar from "./components/Navigation/NavBar";
 import Main from "./components/Main/Main";
-import DataContext from "./components/pastries-data";
+import cartReducer from "./components/Cart/cartReducer";
+import CombinedContext from "./components/combined-context";
 import "./App.css";
 
 function App() {
@@ -20,8 +21,35 @@ function App() {
 			.catch((error) => console.log(error));
 	}, []);
 
+	const initialCartState = {
+		items: [],
+		total: 0,
+	};
+	const [cartState, dispatchCartAction] = useReducer(
+		cartReducer,
+		initialCartState
+	);
+
+	const addProductHandler = (item) => {
+		dispatchCartAction({ type: "ADD", item: item });
+	};
+
+	const removeProductHandler = (title) => {
+		dispatchCartAction({ type: "REMOVE", title: title });
+	};
+
+	const dataContext = { data: pastriesData };
+	const cartContext = {
+		cart: {
+			items: cartState.items,
+			total: cartState.total,
+			addProduct: addProductHandler,
+			removeProduct: removeProductHandler,
+		},
+	};
+
 	return (
-		<DataContext.Provider value={pastriesData}>
+		<CombinedContext.Provider value={{ ...dataContext, ...cartContext }}>
 			<div className="error-container">
 				<h1>Invalid width size! Minimum 390px!</h1>
 			</div>
@@ -29,7 +57,7 @@ function App() {
 				<NavBar />
 				<Main />
 			</div>
-		</DataContext.Provider>
+		</CombinedContext.Provider>
 	);
 }
 

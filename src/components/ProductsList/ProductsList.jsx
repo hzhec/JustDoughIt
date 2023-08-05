@@ -1,11 +1,11 @@
 // import { getPastriesData } from "../../firebase/firebaseData";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import DataContext from "../pastries-data";
+import CombinedContext from "../combined-context";
 import "./ProductsList.css";
 // pastry data includes category, currentPrice, description, imgUrl, rating, title, usualPrice
 const ProductsList = () => {
-	const dataContext = useContext(DataContext);
+	const dataContext = useContext(CombinedContext);
 	const [isLoading, setIsLoading] = useState(false);
 	// const [productsArray, setProductsArray] = useState([]);
 
@@ -27,7 +27,7 @@ const ProductsList = () => {
 	// 		.catch((error) => console.log(error));
 	// }, []);
 
-	const products = dataContext.map((product, index) => {
+	const products = dataContext.data.map((product, index) => {
 		return (
 			<Link
 				to={`/product/${product.title.replace(/\s/g, "")}`}
