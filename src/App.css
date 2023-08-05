@@ -1,17 +1,37 @@
 .main-container {
-	width: 70%;
+	width: 1500px;
 	display: flex;
 	flex-direction: column;
 	/* padding: 0px auto; */
 }
 
 .content-container {
-	width: 90%;
+	width: 60%;
 	margin: 30px auto 30px auto;
 }
 
-@media (min-width: 390px) and (max-width: 1400px) {
+.error-container {
+	width: 90%;
+	text-align: center;
+	display: none;
+	margin: 250px auto;
+}
+
+@media (min-width: 390px) and (max-width: 1500px) {
+	.main-container {
+		width: 390px;
+	}
 	.content-container {
 		width: 100%;
+	}
+}
+
+@media (max-width: 389px) {
+	.main-container {
+		display: none;
+	}
+
+	.error-container {
+		display: flex;
 	}
 }

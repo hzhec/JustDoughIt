@@ -1,5 +1,5 @@
 .product-details {
-	width: 95%;
+	width: 1450px;
 	/* display: grid;
 	grid-template-areas:
 		"img title"
@@ -19,9 +19,12 @@
 	width: 50%;
 	object-fit: cover;
 	margin: 0;
+	display: flex;
+	justify-content: center;
 }
 
 .product-image img {
+	width: 90%;
 	border-radius: 15px;
 }
 
@@ -144,6 +147,8 @@
 
 .back-button {
 	width: 30%;
+	display: flex;
+	justify-content: center;
 }
 
 .back-button button {
@@ -156,25 +161,44 @@
 	height: 30px;
 }
 
-@media (min-width: 390px) and (max-width: 1400px) {
+.loading-page {
+	margin: 80px auto 40px auto;
+	width: 500px;
+	text-align: center;
+	font-size: 30px;
+	animation: blink 1.5s linear infinite;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@media (min-width: 390px) and (max-width: 1500px) {
 	.product-details {
-		width: 100%;
+		width: 390px;
 		display: block;
 		justify-content: center;
 		/* text-align: center; */
+		/* margin: 15px auto; */
 	}
 
 	.product-image {
-		width: 100%;
+		width: 380px;
 		margin: 0 auto;
 	}
 
 	.product-image img {
-		min-width: 250px;
+		width: 380px;
 	}
 
 	.product-info {
-		width: 100%;
+		width: 390px;
 		margin: 0 auto;
 	}
 
@@ -183,15 +207,15 @@
 	}
 
 	.product-rating {
-		width: 100%;
+		width: 50%;
 	}
 
 	.description {
-		width: 100%;
+		width: 380px;
 	}
 
 	.product-current-price {
-		width: 100%;
+		width: 300px;
 	}
 
 	.product-current-price h3 {
@@ -206,19 +230,21 @@
 	}
 
 	.input-cart {
-		width: 100%;
+		width: 150px;
 	}
 
 	.input-cart input {
+		height: 50px;
 		margin: 15px 0;
+		font-size: 25px;
 	}
 
 	.cart-button {
-		width: 90%;
+		width: 300px;
 	}
 
 	.back-button {
-		width: 100%;
+		width: 250px;
 	}
 
 	.back-button button {

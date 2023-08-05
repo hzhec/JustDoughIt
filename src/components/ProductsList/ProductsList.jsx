@@ -1,9 +1,9 @@
 // import { getPastriesData } from "../../firebase/firebaseData";
 // import { useContext, useEffect, useState } from "react";
 import { useContext } from "react";
-import "./ProductsList.css";
 import { Link } from "react-router-dom";
 import DataContext from "../pastries-data";
+import "./ProductsList.css";
 // pastry data includes category, currentPrice, description, imgUrl, rating, title, usualPrice
 const ProductsList = () => {
 	const dataContext = useContext(DataContext);

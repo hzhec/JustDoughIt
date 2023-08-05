@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingBasket, FaUser, FaSearch } from "react-icons/fa";
 import { MdOutlineBakeryDining } from "react-icons/md";
 
 import "./NavBar.css";
-import { Link } from "react-router-dom";
 
 const NavBar = () => {
 	const [searchToggle, setSearchToggle] = useState(false);

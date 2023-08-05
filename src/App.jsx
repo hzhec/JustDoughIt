@@ -1,9 +1,9 @@
-import NavBar from "./components/Navigation/NavBar";
-import "./App.css";
-import Main from "./components/Main/Main";
 import { getPastriesData } from "./firebase/firebaseData";
 import { useEffect, useState } from "react";
+import NavBar from "./components/Navigation/NavBar";
+import Main from "./components/Main/Main";
 import DataContext from "./components/pastries-data";
+import "./App.css";
 
 function App() {
 	const [pastriesData, setPastriesData] = useState([]);
@@ -22,6 +22,9 @@ function App() {
 
 	return (
 		<DataContext.Provider value={pastriesData}>
+			<div className="error-container">
+				<h1>Invalid width size! Minimum 390px!</h1>
+			</div>
 			<div className="main-container">
 				<NavBar />
 				<Main />

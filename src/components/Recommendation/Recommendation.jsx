@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 // import { getPastriesData } from "../../firebase/firebaseData";
-import "./Recommendation.css";
 import DataContext from "../pastries-data";
+import "./Recommendation.css";
 
 const Recommendation = () => {
 	// const [recProducts, setRecProducts] = useState([]);

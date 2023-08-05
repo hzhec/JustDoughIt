@@ -6,6 +6,7 @@ import UserProfile from "../UserProfile/UserProfile";
 import NotFound from "../NotFound/NotFound";
 import ProductsList from "../ProductsList/ProductsList";
 import Product from "../Product/Product";
+import "./Main.css";
 
 const Main = () => {
 	return (

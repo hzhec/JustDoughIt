@@ -116,7 +116,7 @@
 	}
 }
 
-@media (min-width: 390px) and (max-width: 1400px) {
+@media (min-width: 390px) and (max-width: 1500px) {
 	.recommendation-header h1 {
 		font-size: 30px;
 	}
