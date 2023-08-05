@@ -11,7 +11,7 @@ const ProductsList = () => {
 
 	setTimeout(() => {
 		setIsLoading(true);
-	}, 1200);
+	}, 1000);
 
 	// useEffect(() => {
 	// 	console.log(getPastriesData());

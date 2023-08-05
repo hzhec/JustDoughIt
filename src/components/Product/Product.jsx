@@ -13,7 +13,7 @@ const Product = () => {
 
 	setTimeout(() => {
 		setIsLoading(false);
-	}, 1200);
+	}, 1000);
 
 	// useEffect(() => {
 	// 	setIsLoading(true);
@@ -94,7 +94,6 @@ const Product = () => {
 
 	return (
 		<>
-			{console.log(selectedProduct)}
 			{isLoading && <div className="loading-page">Loading product...</div>}
 			{!isLoading &&
 				(selectedProduct.length !== 0 ? (
