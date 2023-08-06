@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import "./Cart.css";
 import CombinedContext from "../combined-context";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
 	const cartContext = useContext(CombinedContext);
@@ -25,8 +25,17 @@ const Cart = () => {
 		<ul className="cart-items">
 			{cartContext.cart.items.map((item, index) => (
 				<li key={index} className="cart-item">
-					<img src={item.imgUrl} alt={item.title} className="item-image" />
-					<h2>{item.title}</h2>
+					<Link
+						to={`/product/${item.title.replace(/\s/g, "")}`}
+						className="item-title"
+					>
+						<img
+							src={item.imgUrl}
+							alt={item.title}
+							className="item-image"
+						/>
+						{item.title}
+					</Link>
 					<div className="summary">
 						<span className="price">${item.currentPrice.toFixed(2)}</span>
 						<span className="amount">{item.amount}</span>
