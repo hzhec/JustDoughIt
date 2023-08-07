@@ -1,17 +1,22 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaHeart, FaShoppingBasket, FaUser, FaSearch } from "react-icons/fa";
+import { FaHeart, FaUser, FaSearch, FaShoppingBasket } from "react-icons/fa";
 import { MdOutlineBakeryDining } from "react-icons/md";
 
 import "./NavBar.css";
+import CartNumber from "../Cart/CartNumber";
 
 const NavBar = () => {
 	const [searchToggle, setSearchToggle] = useState(false);
 	const enteredInput = useRef();
 	const navigate = useNavigate();
 
-	const clickHandler = () => {
+	const searchHandler = () => {
 		setSearchToggle((prev) => !prev);
+	};
+
+	const clickHandler = (location) => {
+		navigate("/" + location);
 	};
 
 	const formHandler = (event) => {
@@ -22,7 +27,7 @@ const NavBar = () => {
 	};
 
 	return (
-		<nav>
+		<div className="nav">
 			<div className="shop-container">
 				<Link to="/">
 					<MdOutlineBakeryDining className="shop-icon" />
@@ -48,21 +53,37 @@ const NavBar = () => {
 				</form>
 			</div>
 
-			<div className="user-container">
-				<div className="search-icon" onClick={clickHandler}>
-					<FaSearch className="nav-icons" />
+			<div className="icon-container">
+				<div className="nav-icons" onClick={searchHandler}>
+					<FaSearch className="icon" />
 				</div>
-				<Link to="/favourites">
-					<FaHeart className="nav-icons" />
-				</Link>
-				<Link to="/cart">
-					<FaShoppingBasket className="nav-icons" />
-				</Link>
-				<Link to="/profile">
-					<FaUser className="nav-icons" />
-				</Link>
+				<div
+					className="nav-icons"
+					onClick={() => {
+						clickHandler("favourites");
+					}}
+				>
+					<FaHeart className="icon" />
+				</div>
+				<div
+					className="nav-icons"
+					onClick={() => {
+						clickHandler("profile");
+					}}
+				>
+					<FaUser className="icon" />
+				</div>
+				<div
+					className="nav-icons"
+					onClick={() => {
+						clickHandler("cart");
+					}}
+				>
+					<FaShoppingBasket className="icon" />
+					<CartNumber />
+				</div>
 			</div>
-		</nav>
+		</div>
 	);
 };
 
