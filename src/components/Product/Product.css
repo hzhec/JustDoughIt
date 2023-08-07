@@ -154,7 +154,7 @@
 }
 
 .back-button button {
-	margin-top: 100px;
+	margin: 50px auto;
 	font-size: 15px;
 	border-radius: 10px;
 	background-color: rgb(255, 192, 125);
@@ -175,10 +175,12 @@
 
 .loading-page {
 	margin: 80px auto 40px auto;
-	width: 500px;
+	width: 400px;
 	text-align: center;
 	font-size: 30px;
 	animation: blink 1.5s linear infinite;
+	background-color: #ffc5788e;
+	border-radius: 10px;
 }
 
 @keyframes blink {
@@ -193,7 +195,7 @@
 
 @media (min-width: 390px) and (max-width: 1500px) {
 	.product-details {
-		width: 390px;
+		width: 95%;
 		display: block;
 		justify-content: center;
 		/* text-align: center; */
@@ -201,16 +203,16 @@
 	}
 
 	.product-image {
-		width: 380px;
+		width: 100%;
 		margin: 0 auto;
 	}
 
 	.product-image img {
-		width: 380px;
+		width: 100%;
 	}
 
 	.product-info {
-		width: 390px;
+		width: 100%;
 		margin: 0 auto;
 	}
 
@@ -223,15 +225,16 @@
 	}
 
 	.description {
-		width: 380px;
+		width: 90%;
+		font-size: 15px;
 	}
 
 	.product-current-price {
-		width: 300px;
+		width: 85%;
 	}
 
 	.product-current-price h3 {
-		font-size: 23px;
+		font-size: 22px;
 	}
 
 	.add-to-cart {
@@ -242,24 +245,32 @@
 	}
 
 	.input-cart {
-		width: 150px;
+		width: 90px;
 	}
 
 	.input-cart input {
 		height: 50px;
 		margin: 15px 0;
 		font-size: 25px;
+		padding: 0 8px;
 	}
 
 	.cart-button {
-		width: 300px;
+		width: 60%;
 	}
 
 	.back-button {
-		width: 250px;
+		width: 200px;
 	}
 
 	.back-button button {
 		width: 100%;
+	}
+
+	.loading-page {
+		width: 70%;
+		text-align: center;
+		font-size: 18px;
+		animation: blink 1.5s linear infinite;
 	}
 }

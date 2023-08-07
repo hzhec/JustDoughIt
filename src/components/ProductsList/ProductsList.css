@@ -1,3 +1,7 @@
+.product-container {
+	width: 1350px;
+}
+
 .products {
 	width: 95%;
 	/* min-width: 500px; */
@@ -48,6 +52,7 @@
 	overflow: hidden;
 	transition: 0.5s ease;
 	font-family: "Indie Flower", cursive;
+	color: black;
 }
 
 .product img {
@@ -64,13 +69,19 @@
 }
 
 @media (min-width: 390px) and (max-width: 1500px) {
+	.product-container {
+		width: 95%;
+	}
+
 	.product-header h1 {
-		font-size: 30px;
+		font-size: 25px;
 	}
 
 	.products {
 		width: 100%;
 		grid-template-columns: repeat(auto-fit, 100px);
+		padding: 10px;
+		column-gap: 15px;
 	}
 
 	.product {

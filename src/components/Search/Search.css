@@ -10,3 +10,13 @@
 	text-align: center;
 	margin: 30px auto;
 }
+
+@media (min-width: 390px) and (max-width: 1500px) {
+	.search-container {
+		width: 90%;
+	}
+
+	.search-container h1 {
+		font-size: 25px;
+	}
+}

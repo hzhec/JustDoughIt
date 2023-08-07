@@ -6,15 +6,15 @@
 }
 
 .content-container {
-	width: 60%;
+	width: 90%;
 	margin: 30px auto 30px auto;
 }
 
 .error-container {
-	width: 90%;
+	width: 100%;
 	text-align: center;
 	display: none;
-	margin: 250px auto;
+	margin: 100px 0;
 }
 
 @media (min-width: 390px) and (max-width: 1500px) {
@@ -22,7 +22,8 @@
 		width: 390px;
 	}
 	.content-container {
-		width: 100%;
+		width: 95%;
+		margin-top: 10px;
 	}
 }
 
@@ -33,5 +34,10 @@
 
 	.error-container {
 		display: flex;
+	}
+
+	.error-message {
+		font-size: 30px;
+		margin: 10px 40px;
 	}
 }

@@ -8,3 +8,9 @@
 	margin: 30px auto;
 	font-size: 45px;
 }
+
+@media (min-width: 390px) and (max-width: 1500px) {
+	.favourites h1 {
+		font-size: 25px;
+	}
+}

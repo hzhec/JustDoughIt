@@ -12,13 +12,15 @@
 }
 
 .shop-container {
-	margin: 0 2rem 0 1rem;
-	width: 90%;
+	display: flex;
+	/* margin: 0 2rem 0 1rem; */
+	width: 100%;
 }
 
 .shop-container a {
 	display: flex;
-	align-items: center;
+	/* align-items: center; */
+	margin: 0 10px;
 }
 
 .shop-icon {
@@ -45,26 +47,29 @@ input {
 	margin: 0rem 2rem;
 	border-radius: 5px;
 	position: relative;
-	width: 25rem;
+	width: 30rem;
 }
 
 .icon-container {
 	display: flex;
-	width: 50%;
-	margin-right: 20px;
+	width: 90%;
+	margin-right: 30px;
+	justify-content: flex-end;
 }
 
 .nav-icons {
 	display: flex;
-	justify-content: flex-start;
+	/* justify-content: center; */
 	align-items: center;
 	cursor: pointer;
 	position: relative;
-	height: 4rem;
+	height: 60px;
+	margin: 0;
 }
 
 .icon {
-	height: 1.4rem;
+	width: 70px;
+	height: 22px;
 	color: rgb(255, 147, 31);
 }
 
@@ -74,27 +79,27 @@ input {
 }
 
 @media (min-width: 390px) and (max-width: 1500px) {
-	nav {
+	.nav {
 		width: 390px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		text-align: center;
 		padding: 0;
-		margin: 0 auto;
+		/* margin: 0 auto; */
 	}
 
 	.shop-container {
-		width: 50%;
-		margin: 10px auto;
+		width: 100%;
 	}
 
 	.shop-container a {
 		align-items: center;
+		margin: 35px auto 5px auto;
 	}
 
 	.shop-icon {
-		width: 50%;
+		width: 100%;
 	}
 
 	.shop-text {
@@ -102,8 +107,7 @@ input {
 	}
 
 	.searchbar-container {
-		width: 80%;
-		margin: 10px;
+		width: 100%;
 	}
 
 	.searchbar-container input {
@@ -111,14 +115,14 @@ input {
 		margin: 0;
 	}
 
-	.user-container {
-		width: 70%;
+	.icon-container {
+		width: 80%;
 		align-items: center;
-		margin-top: 10px;
+		margin: 0 20px 0 0;
 	}
 
 	.nav-icons {
-		width: 90%;
+		width: 100%;
 		margin: 0;
 	}
 }

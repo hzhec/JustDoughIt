@@ -47,7 +47,9 @@ function App() {
 	return (
 		<CombinedContext.Provider value={{ ...dataContext, ...cartContext }}>
 			<div className="error-container">
-				<h1>Invalid width size! Minimum 390px!</h1>
+				<div className="error-message">
+					Invalid width size! Minimum 390px!
+				</div>
 			</div>
 			<div className="main-container">
 				<NavBar />
