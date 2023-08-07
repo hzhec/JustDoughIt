@@ -80,15 +80,12 @@ const Cart = () => {
 						<h2 className="actions-header">Actions</h2>
 					</div>
 					<ul className="cart-items">{cartItems}</ul>
-					<button
-						className="updateBtn"
-						onClick={() => qtyUpdateHandler(cart.items)}
-					>
+					<button className="updateBtn" onClick={qtyUpdateHandler}>
 						Update Cart
 					</button>
 					<div className="cart-total">
 						<span>Total Amount</span>
-						<span>${total}</span>
+						<span className="total-amount">${total}</span>
 					</div>
 				</div>
 			)}

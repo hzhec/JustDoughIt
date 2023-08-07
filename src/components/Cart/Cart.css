@@ -169,6 +169,10 @@
 	margin-right: 0;
 }
 
+.cart-total .total-amount {
+	margin: 0 270px;
+}
+
 .no-items {
 	width: 600px;
 	margin: 100px auto;
@@ -248,6 +252,10 @@
 
 	.cart-total {
 		font-size: 18px;
+	}
+
+	.cart-total .total-amount {
+		margin: 0 auto;
 	}
 
 	.no-items {
