@@ -6,7 +6,6 @@ const Home = () => {
 		<div className="home">
 			<Recommendation />
 			<div className="content-container">
-				{/* {console.log("allProduct", productsArray)} */}
 				<ProductsList />
 			</div>
 		</div>

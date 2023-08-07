@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaHeart, FaUser, FaSearch } from "react-icons/fa";
+import { FaUser, FaSearch } from "react-icons/fa";
 import { MdOutlineBakeryDining } from "react-icons/md";
 
 import "./NavBar.css";
@@ -57,14 +57,7 @@ const NavBar = () => {
 				<div className="nav-icons" onClick={searchHandler}>
 					<FaSearch className="icon" />
 				</div>
-				<div
-					className="nav-icons"
-					onClick={() => {
-						clickHandler("favourites");
-					}}
-				>
-					<FaHeart className="icon" />
-				</div>
+
 				<div
 					className="nav-icons"
 					onClick={() => {
