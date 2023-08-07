@@ -34,6 +34,10 @@ function App() {
 		dispatchCartAction({ type: "REMOVE", title });
 	};
 
+	const updateProductHandler = (item) => {
+		dispatchCartAction({ type: "UPDATE", item });
+	};
+
 	const dataContext = { data: pastriesData };
 	const cartContext = {
 		cart: {
@@ -41,6 +45,7 @@ function App() {
 			total: cartState.total,
 			addProduct: addProductHandler,
 			removeProduct: removeProductHandler,
+			updateProduct: updateProductHandler,
 		},
 	};
 

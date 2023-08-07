@@ -30,21 +30,52 @@ const cartReducer = (state, action) => {
 			const existingCartProductIndex = state.items.findIndex(
 				(item) => item.title === action.title
 			);
-			const existingProduct = state.items[existingCartProductIndex];
-			const updatedTotal = state.total - existingProduct.currentPrice;
+			const existingCartProduct = state.items[existingCartProductIndex];
+			const updatedTotal = state.total - existingCartProduct.currentPrice;
 			let updatedProducts;
-			if (existingProduct.amount === 1) {
+			if (existingCartProduct.amount === 1) {
 				updatedProducts = state.items.filter(
 					(item) => item.title !== action.title
 				);
 			} else {
 				const updatedProduct = {
-					...existingProduct,
-					amount: existingProduct.amount - 1,
+					...existingCartProduct,
+					amount: existingCartProduct.amount - 1,
 				};
 				updatedProducts = [...state.items];
 				updatedProducts[existingCartProductIndex] = updatedProduct;
 			}
+			return {
+				items: updatedProducts,
+				total: updatedTotal,
+			};
+		}
+
+		case "UPDATE": {
+			const existingCartProductIndex = state.items.findIndex(
+				(item) => item.title === action.item.title
+			);
+			const existingCartProduct = state.items[existingCartProductIndex];
+
+			const updatedTotal =
+				state.total -
+				existingCartProduct.currentPrice * existingCartProduct.amount +
+				action.item.currentPrice * action.item.amount;
+
+			let updatedProducts;
+			if (action.item.amount !== 0) {
+				const updatedProduct = {
+					...existingCartProduct,
+					amount: action.item.amount,
+				};
+				updatedProducts = [...state.items];
+				updatedProducts[existingCartProductIndex] = updatedProduct;
+			} else {
+				updatedProducts = state.items.filter(
+					(item) => item.title !== action.item.title
+				);
+			}
+
 			return {
 				items: updatedProducts,
 				total: updatedTotal,

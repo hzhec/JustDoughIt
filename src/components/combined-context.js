@@ -8,6 +8,7 @@ const CombinedContext = createContext({
 		total: 0,
 		addProduct: (item) => {},
 		removeProduct: (title) => {},
+		updateProduct: (item) => {},
 	},
 });
 
