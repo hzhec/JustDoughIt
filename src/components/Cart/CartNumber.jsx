@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-// import { FaShoppingBasket } from "react-icons/fa";
+import { FaShoppingBasket } from "react-icons/fa";
 import CombinedContext from "../combined-context";
 // import { Link } from "react-router-dom";
 import "./CartNumber.css";
@@ -29,6 +29,7 @@ const CartNumber = () => {
 
 	return (
 		<>
+			<FaShoppingBasket className={`icon ${cartAdded ? "bump" : ""}`} />
 			<span className={`cart-item-number ${cartAdded ? "bump" : ""}`}>
 				{numOfCartItems}
 			</span>

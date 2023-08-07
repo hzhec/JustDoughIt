@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaHeart, FaUser, FaSearch, FaShoppingBasket } from "react-icons/fa";
+import { FaHeart, FaUser, FaSearch } from "react-icons/fa";
 import { MdOutlineBakeryDining } from "react-icons/md";
 
 import "./NavBar.css";
@@ -79,7 +79,6 @@ const NavBar = () => {
 						clickHandler("cart");
 					}}
 				>
-					<FaShoppingBasket className="icon" />
 					<CartNumber />
 				</div>
 			</div>

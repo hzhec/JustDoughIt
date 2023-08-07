@@ -1,11 +1,15 @@
 .cart-item-number {
 	display: flex;
-	width: 35%;
-	justify-content: flex-end;
-	align-items: center;
-	font-size: 35px;
+	/* width: 100%; */
+	/* justify-content: flex-start; */
+	/* align-items: center; */
+	font-size: 30px;
 	cursor: pointer;
 	color: rgb(255, 147, 31);
+	/* height: 2.5rem; */
+	position: absolute;
+	left: 75%;
+	margin-top: 5px;
 }
 
 .bump {
