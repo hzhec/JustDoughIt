@@ -1,0 +1,12 @@
+.search-container {
+	width: 1200px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.search-container h1 {
+	font-size: 45px;
+	text-align: center;
+	margin: 30px auto;
+}

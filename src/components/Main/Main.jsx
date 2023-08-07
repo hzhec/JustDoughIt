@@ -7,6 +7,7 @@ import NotFound from "../NotFound/NotFound";
 import ProductsList from "../ProductsList/ProductsList";
 import Product from "../Product/Product";
 import "./Main.css";
+import Search from "../Search/Search";
 
 const Main = () => {
 	return (
@@ -18,7 +19,11 @@ const Main = () => {
 				<Route exact path="/profile" element={<UserProfile />} />
 				<Route exact path="/products" element={<ProductsList />} />
 				<Route exact path="/product/:productTitle" element={<Product />} />
-				<Route path="*" element={<NotFound />} />
+				<Route exact path="/search/:searchProduct" element={<Search />} />
+				<Route
+					path="*"
+					element={<NotFound message={`Error 404 - Page Not Found!`} />}
+				/>
 			</Routes>
 		</div>
 	);

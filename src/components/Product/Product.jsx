@@ -130,7 +130,7 @@ const Product = () => {
 						</div>
 					</>
 				) : (
-					<NotFound />
+					<NotFound message={`Error 404 - Page Not Found!`} />
 				))}
 		</>
 	);

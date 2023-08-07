@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { FaShoppingBasket, FaUser, FaSearch } from "react-icons/fa";
 import { MdOutlineBakeryDining } from "react-icons/md";
@@ -9,6 +9,7 @@ import "./NavBar.css";
 const NavBar = () => {
 	const [searchToggle, setSearchToggle] = useState(false);
 	const enteredInput = useRef();
+	const navigate = useNavigate();
 
 	const clickHandler = () => {
 		setSearchToggle((prev) => !prev);
@@ -16,6 +17,9 @@ const NavBar = () => {
 
 	const formHandler = (event) => {
 		event.preventDefault();
+
+		navigate("/search/" + enteredInput.current.value);
+		enteredInput.current.value = "";
 	};
 
 	return (
@@ -28,7 +32,7 @@ const NavBar = () => {
 			</div>
 
 			<div
-				className="search-container"
+				className="searchbar-container"
 				style={
 					searchToggle
 						? { visibility: "visible" }

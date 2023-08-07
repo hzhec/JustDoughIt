@@ -38,7 +38,6 @@
 
 .item-title {
 	color: black;
-	font-size: 30px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -46,6 +45,10 @@
 
 .item-title:hover {
 	color: #ff7a15;
+}
+
+.item-title h2 {
+	font-size: 25px;
 }
 
 .item-image {

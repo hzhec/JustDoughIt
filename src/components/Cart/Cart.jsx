@@ -4,17 +4,17 @@ import CombinedContext from "../combined-context";
 import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
-	const cartContext = useContext(CombinedContext);
+	const { cart } = useContext(CombinedContext);
 	const navigate = useNavigate();
-	const total = `${cartContext.cart.total.toFixed(2)}`;
-	const hasProductInCart = cartContext.cart.items.length > 0;
+	const total = `${cart.total.toFixed(2)}`;
+	const hasProductInCart = cart.items.length > 0;
 
 	const cartAddHandler = (item) => {
-		cartContext.cart.addProduct({ ...item, amount: 1 });
+		cart.addProduct({ ...item, amount: 1 });
 	};
 
 	const cartRemoveHandler = (title) => {
-		cartContext.cart.removeProduct(title);
+		cart.removeProduct(title);
 	};
 
 	const backHandler = () => {
@@ -23,7 +23,7 @@ const Cart = () => {
 
 	const cartItems = (
 		<ul className="cart-items">
-			{cartContext.cart.items.map((item, index) => (
+			{cart.items.map((item, index) => (
 				<li key={index} className="cart-item">
 					<Link
 						to={`/product/${item.title.replace(/\s/g, "")}`}
@@ -34,7 +34,7 @@ const Cart = () => {
 							alt={item.title}
 							className="item-image"
 						/>
-						{item.title}
+						<h2>{item.title}</h2>
 					</Link>
 					<div className="summary">
 						<span className="price">${item.currentPrice.toFixed(2)}</span>
