@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
-import { FaShoppingBasket, FaUser, FaSearch } from "react-icons/fa";
+import { FaHeart, FaShoppingBasket, FaUser, FaSearch } from "react-icons/fa";
 import { MdOutlineBakeryDining } from "react-icons/md";
 
 import "./NavBar.css";

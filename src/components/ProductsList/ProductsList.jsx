@@ -1,31 +1,19 @@
-// import { getPastriesData } from "../../firebase/firebaseData";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import CombinedContext from "../combined-context";
 import "./ProductsList.css";
 // pastry data includes category, currentPrice, description, imgUrl, rating, title, usualPrice
+
 const ProductsList = () => {
 	const { data } = useContext(CombinedContext);
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	// const [productsArray, setProductsArray] = useState([]);
 
-	setTimeout(() => {
-		setIsLoading(true);
-	}, 1000);
-
-	// useEffect(() => {
-	// 	console.log(getPastriesData());
-	// 	getPastriesData()
-	// 		.then((data) => {
-	// 			for (let i = 0; i < data.length; i++) {
-	// 				setProductsArray((prev) => {
-	// 					return [...prev, { ...data[i] }];
-	// 				});
-	// 				// console.log(data[i]);
-	// 			}
-	// 		})
-	// 		.catch((error) => console.log(error));
-	// }, []);
+	useEffect(() => {
+		setTimeout(() => {
+			setIsLoading(false);
+		}, 1000);
+	}, []);
 
 	const products = data.map((product, index) => {
 		return (
@@ -46,8 +34,9 @@ const ProductsList = () => {
 				<h1>All Products</h1>
 			</div>
 			<div className="product-container">
-				{isLoading && <div className="products">{products}</div>}
-				{!isLoading && (
+				{!isLoading ? (
+					<div className="products">{products}</div>
+				) : (
 					<div className="loading-page">Loading all products...</div>
 				)}
 			</div>

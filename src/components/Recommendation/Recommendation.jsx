@@ -1,14 +1,12 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, useRef, useContext } from "react";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
-// import { getPastriesData } from "../../firebase/firebaseData";
 import CombinedContext from "../combined-context";
 import "./Recommendation.css";
 
 const Recommendation = () => {
-	// const [recProducts, setRecProducts] = useState([]);
 	const [currentProduct, setCurrentProduct] = useState(0);
-	const dataContext = useContext(CombinedContext);
+	const { data } = useContext(CombinedContext);
 	const timeRef = useRef(null);
 
 	const resetTimeOut = () => {
@@ -17,24 +15,8 @@ const Recommendation = () => {
 		}
 	};
 
-	const recProducts = dataContext.data.filter(
-		(item) => item.recommendation === true
-	);
+	const recProducts = data.filter((item) => item.recommendation === true);
 	const productLength = recProducts.length;
-
-	// useEffect(() => {
-	// 	getPastriesData()
-	// 		.then((data) => {
-	// 			for (let i = 0; i < data.length; i++) {
-	// 				if (data[i].recommendation === true) {
-	// 					setRecProducts((prev) => {
-	// 						return [...prev, { ...data[i] }];
-	// 					});
-	// 				}
-	// 			}
-	// 		})
-	// 		.catch((error) => console.log(error));
-	// }, []);
 
 	useEffect(() => {
 		resetTimeOut();
@@ -47,7 +29,7 @@ const Recommendation = () => {
 		return () => {
 			resetTimeOut();
 		};
-	}, [currentProduct]);
+	}, [currentProduct, productLength]);
 
 	const nextSlide = () => {
 		setCurrentProduct(
@@ -61,7 +43,7 @@ const Recommendation = () => {
 		);
 	};
 
-	if (!Array.isArray(dataContext.data) || productLength <= 0) {
+	if (!Array.isArray(data) || productLength <= 0) {
 		return null;
 	}
 

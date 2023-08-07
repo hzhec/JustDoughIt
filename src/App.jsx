@@ -12,11 +12,7 @@ function App() {
 	useEffect(() => {
 		getPastriesData()
 			.then((data) => {
-				for (let i = 0; i < data.length; i++) {
-					setPastriesData((prev) => {
-						return [...prev, { ...data[i] }];
-					});
-				}
+				setPastriesData(data.map((item) => ({ ...item })));
 			})
 			.catch((error) => console.log(error));
 	}, []);
@@ -31,11 +27,11 @@ function App() {
 	);
 
 	const addProductHandler = (item) => {
-		dispatchCartAction({ type: "ADD", item: item });
+		dispatchCartAction({ type: "ADD", item });
 	};
 
 	const removeProductHandler = (title) => {
-		dispatchCartAction({ type: "REMOVE", title: title });
+		dispatchCartAction({ type: "REMOVE", title });
 	};
 
 	const dataContext = { data: pastriesData };
