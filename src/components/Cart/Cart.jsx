@@ -18,16 +18,16 @@ const Cart = () => {
 		cart.removeProduct(title);
 	};
 
-	const backHandler = () => {
-		navigate("/products");
-	};
-
 	const qtyUpdateHandler = () => {
 		cart.items.forEach((item) => {
 			const itemTitle = item.title.replace(/\s/g, "");
 			const itemValue = qtyRef.current[itemTitle].value;
 			cart.updateProduct({ ...item, amount: parseInt(itemValue) });
 		});
+	};
+
+	const backHandler = () => {
+		navigate("/products");
 	};
 
 	useEffect(() => {
@@ -80,12 +80,25 @@ const Cart = () => {
 						<h2 className="actions-header">Actions</h2>
 					</div>
 					<ul className="cart-items">{cartItems}</ul>
-					<button className="updateBtn" onClick={qtyUpdateHandler}>
-						Update Cart
-					</button>
+
 					<div className="cart-total">
 						<span>Total Amount</span>
 						<span className="total-amount">${total}</span>
+					</div>
+
+					<div className="cart-actions">
+						<button
+							className="cartActionBtn update"
+							onClick={qtyUpdateHandler}
+						>
+							Update Cart
+						</button>
+						<button
+							className="cartActionBtn checkout"
+							onClick={qtyUpdateHandler}
+						>
+							Checkout
+						</button>
 					</div>
 				</div>
 			)}
