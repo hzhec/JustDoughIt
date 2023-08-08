@@ -7,6 +7,7 @@ import ProductsList from "../ProductsList/ProductsList";
 import Product from "../Product/Product";
 import "./Main.css";
 import Search from "../Search/Search";
+import Checkout from "../Checkout/Checkout";
 
 const Main = () => {
 	return (
@@ -22,6 +23,7 @@ const Main = () => {
 					path="*"
 					element={<NotFound message={`Error 404 - Page Not Found!`} />}
 				/>
+				<Route path="/checkout" element={<Checkout />} />
 			</Routes>
 		</div>
 	);

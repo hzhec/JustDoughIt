@@ -1,0 +1,22 @@
+.checkout-form {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin: 0 auto;
+}
+
+.checkout-form button {
+	width: 130px;
+	font-size: 18px;
+	border-radius: 6px;
+	margin: 10px auto;
+	text-align: center;
+	cursor: pointer;
+	border: 2px solid #ffab62;
+	color: #ff7a15;
+	background-color: rgba(255, 255, 255, 0.623);
+}
+
+.error-checkout {
+	margin: 15px auto;
+}

@@ -30,6 +30,10 @@ const Cart = () => {
 		navigate("/products");
 	};
 
+	const checkoutHandler = () => {
+		navigate("/checkout");
+	};
+
 	useEffect(() => {
 		cart.items.forEach((item) => {
 			const itemTitle = item.title.replace(/\s/g, "");
@@ -67,7 +71,7 @@ const Cart = () => {
 
 	return (
 		<div className="cart">
-			<h1>Cart Page</h1>
+			<h1>Shopping Cart</h1>
 			{hasProductInCart && (
 				<div className="cart-container">
 					<div className="cart-header">
@@ -95,14 +99,16 @@ const Cart = () => {
 						</button>
 						<button
 							className="cartActionBtn checkout"
-							onClick={qtyUpdateHandler}
+							onClick={checkoutHandler}
 						>
 							Checkout
 						</button>
 					</div>
 				</div>
 			)}
-			{!hasProductInCart && <div className="no-items">No items in cart</div>}
+			{!hasProductInCart && (
+				<div className="no-items">Your cart is currently empty</div>
+			)}
 			<div className="back-button">
 				<button onClick={backHandler}>Browse other products...</button>
 			</div>

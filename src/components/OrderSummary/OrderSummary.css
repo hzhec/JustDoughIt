@@ -1,0 +1,54 @@
+.order-summary-header {
+	font-size: 28px;
+	color: orange;
+	text-align: center;
+	margin-bottom: 10px;
+	border-bottom: 4px double orange;
+}
+
+.order-summary {
+	margin: 15px 0;
+	text-align: left;
+	height: 100%;
+}
+
+.order-item,
+.order-item-header {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 0.8fr 0.2fr 0.3fr;
+	margin: 0;
+	padding-right: 5px;
+	text-align: center;
+}
+
+.order-item-header {
+	margin-bottom: 10px;
+	border-bottom: 2px solid black;
+}
+
+.order-item div {
+	text-align: left;
+}
+
+.total-summary {
+	padding-top: 10px;
+	padding-right: 10px;
+	border-top: 2px solid black;
+	text-align: right;
+	font-size: 18px;
+}
+
+@media (min-width: 390px) and (max-width: 1500px) {
+	.order-summary-header {
+		font-size: 20px;
+	}
+
+	.order-summary {
+		font-size: 15px;
+	}
+
+	.total-summary {
+		font-size: 17px;
+	}
+}
