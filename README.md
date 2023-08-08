@@ -5,7 +5,7 @@ JustDoughIt is a simple web application using React that includes features such 
 # Description 
 
 Run `npm install` to install the necessary node modules packages.<br>
-Run `npm run dev` to start development on http://localhost:5173
+Run `npm run start` to start the app on http://localhost:4242
 
 ### Technical Used
 - React created using vite
