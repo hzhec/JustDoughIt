@@ -28,7 +28,7 @@ Users must be able to:
 
 # Credits
 1. Firestore database (Firebase) - to store and extract products information
-2. Images extracted from unsplash.com
-
-
+2. Images extracted from [Unsplash](https://unsplash.com/)
+3. [Stripe Payment guide](https://dev.to/stripe/accept-a-payment-with-vite-react-stripe-and-the-payment-element-4p1b) 
+4. [Stripe Payment processing platform](https://stripe.com/en-sg)
 
