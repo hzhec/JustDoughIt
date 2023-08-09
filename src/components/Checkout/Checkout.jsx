@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-import axios from "axios";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
@@ -10,11 +9,8 @@ import CombinedContext from "../combined-context";
 
 const stripe = Stripe(import.meta.env.VITE_STRIPE_SECRET_KEY);
 
-const initStripe = async () => {
-	const { data } = await axios.get("/api/publishable-key");
-	const publishableKey = await data.publishable_key;
-
-	return loadStripe(publishableKey);
+const initStripe = () => {
+	return loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 };
 
 const Checkout = () => {
