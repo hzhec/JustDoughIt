@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaUser, FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { MdOutlineBakeryDining } from "react-icons/md";
 
 import "./NavBar.css";
@@ -58,14 +58,6 @@ const NavBar = () => {
 					<FaSearch className="icon" />
 				</div>
 
-				<div
-					className="nav-icons"
-					onClick={() => {
-						clickHandler("profile");
-					}}
-				>
-					<FaUser className="icon" />
-				</div>
 				<div
 					className="nav-icons"
 					onClick={() => {
