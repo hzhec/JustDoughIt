@@ -34,10 +34,26 @@ const OrderStatus = () => {
 	const getOrderStatus = () => {
 		if (!paymentIntent) return null;
 
-		const { status, amount } = paymentIntent;
+		const { status, amount, metadata } = paymentIntent;
 		const statusMessage = getMessage(status);
 		const amountPaid =
 			status === "succeeded" ? `$${(amount / 100).toFixed(2)}` : null;
+
+		const parseMetadata = Object.values(metadata).map((item) =>
+			JSON.parse(item)
+		);
+
+		const orderList = parseMetadata.map((item, index) => (
+			<li key={index} className="list-item">
+				<img src={item.imgUrl} alt={item.title} className="item-img" />
+				<div className="item-name">{item.title}</div>
+				<div className="item-qty">{item.amount}</div>
+				<div className="item-price">${item.currentPrice.toFixed(2)}</div>
+				<div className="item-total">
+					${(item.amount * item.currentPrice).toFixed(2)}
+				</div>
+			</li>
+		));
 
 		return (
 			<div className="order-container">
@@ -47,9 +63,15 @@ const OrderStatus = () => {
 						<h1>{statusMessage}</h1>
 					</div>
 					{amountPaid && (
-						<div className="amount-paid">
-							<h1>Amount Paid: {amountPaid}</h1>
-						</div>
+						<>
+							<div className="amount-paid">
+								<h1>Amount Paid: {amountPaid}</h1>
+							</div>
+							<ul className="order-list">
+								<div className="order-list-header">Order List</div>
+								{orderList}
+							</ul>
+						</>
 					)}
 				</div>
 			</div>

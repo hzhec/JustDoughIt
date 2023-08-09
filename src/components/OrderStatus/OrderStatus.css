@@ -14,16 +14,68 @@
 }
 
 .status {
-	margin: 10px auto;
+	margin: 10px;
 }
 
 .amount-paid {
 	margin-top: 30px;
 }
 
+.order-list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.order-list-header {
+	width: 95%;
+	margin: 25px auto 15px auto;
+	font-size: 30px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10px;
+}
+
+.list-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 95%;
+	margin-bottom: 10px;
+	border-bottom: 2px solid orange;
+}
+
+.item-img {
+	width: 160px;
+	margin-bottom: 10px;
+}
+
+.item-name {
+	width: 30%;
+}
+
+.item-qty {
+	width: 10%;
+}
+
+.item-price {
+	width: 15%;
+}
+
+.item-total {
+	width: 15%;
+}
+
 @media (min-width: 390px) and (max-width: 1500px) {
 	.order-details {
 		width: 90%;
 		font-size: 12px;
+	}
+
+	.order-list-header {
+		font-size: 20px;
+	}
+
+	.item-img {
+		width: 80px;
 	}
 }

@@ -34,6 +34,7 @@ const Checkout = () => {
 				automatic_payment_methods: {
 					enabled: true,
 				},
+				metadata: cart.items.map((item) => JSON.stringify(item)),
 			});
 
 			setClientSecretSettings({
