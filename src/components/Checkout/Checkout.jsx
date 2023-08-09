@@ -11,8 +11,8 @@ import CombinedContext from "../combined-context";
 const stripe = Stripe(import.meta.env.VITE_STRIPE_SECRET_KEY);
 
 const initStripe = async () => {
-	const res = await axios.get("/api/publishable-key");
-	const publishableKey = await res.data.publishable_key;
+	const { data } = await axios.get("/api/publishable-key");
+	const publishableKey = await data.publishable_key;
 
 	return loadStripe(publishableKey);
 };
@@ -28,7 +28,6 @@ const Checkout = () => {
 	useEffect(() => {
 		const createPaymentIntent = async () => {
 			const totalAmount = (cart.total * 100).toFixed(0);
-			// const response = await axios.post("/api/create-payment-intent", {});
 			const paymentIntent = await stripe.paymentIntents.create({
 				amount: totalAmount,
 				currency: "sgd",
