@@ -9,8 +9,7 @@
 		"preview": "vite preview",
 		"start": "npm run development",
 		"development": "NODE_ENV=development concurrently --kill-others \"npm run client\" \"npm run server\"",
-		"client": "vite",
-		"server": "node server.js"
+		"client": "vite"
 	},
 	"dependencies": {
 		"@firebase/firestore": "^4.1.0",
