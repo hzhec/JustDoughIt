@@ -12,15 +12,13 @@ Run `npm run start` to start the app on http://localhost:4242
 - Firebase for data API
 - Stripe for payment API
 
-### Wireframes 
-
-
 ### User Stories
 Users must be able to: 
 - View each products
 - Add products to cart
+- Update cart
 - Search for product
-- Checkout product and "make payment"
+- Checkout and "make payment"
 
 # Planning and Development Process
 ### Problem-Solving Strategy 
