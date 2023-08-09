@@ -1,0 +1,29 @@
+.order-container {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.order-details {
+	width: 40%;
+	margin: 50px auto;
+	background-color: rgba(255, 209, 144, 0.467);
+	padding: 10px;
+	border-radius: 20px;
+}
+
+.status {
+	margin: 10px auto;
+}
+
+.amount-paid {
+	margin-top: 30px;
+}
+
+@media (min-width: 390px) and (max-width: 1500px) {
+	.order-details {
+		width: 90%;
+		font-size: 12px;
+	}
+}

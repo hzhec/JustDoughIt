@@ -8,6 +8,7 @@ import Product from "../Product/Product";
 import "./Main.css";
 import Search from "../Search/Search";
 import Checkout from "../Checkout/Checkout";
+import OrderStatus from "../OrderStatus/OrderStatus";
 
 const Main = () => {
 	return (
@@ -17,13 +18,14 @@ const Main = () => {
 				<Route exact path="/cart" element={<Cart />} />
 				<Route exact path="/profile" element={<UserProfile />} />
 				<Route exact path="/products" element={<ProductsList />} />
-				<Route exact path="/product/:productTitle" element={<Product />} />
-				<Route exact path="/search/:searchProduct" element={<Search />} />
+				<Route path="/product/:productTitle" element={<Product />} />
+				<Route path="/search/:searchProduct" element={<Search />} />
 				<Route
 					path="*"
 					element={<NotFound message={`Error 404 - Page Not Found!`} />}
 				/>
-				<Route path="/checkout" element={<Checkout />} />
+				<Route exact path="/checkout" element={<Checkout />} />
+				<Route path="/order" element={<OrderStatus />} />
 			</Routes>
 		</div>
 	);
