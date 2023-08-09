@@ -26,6 +26,7 @@ const Checkout = () => {
 	});
 
 	useEffect(() => {
+		const createPaymentIntent = async () => {
 			const totalAmount = (cart.total * 100).toFixed(0);
 			// const response = await axios.post("/api/create-payment-intent", {});
 			const paymentIntent = await stripe.paymentIntents.create({
@@ -40,7 +41,6 @@ const Checkout = () => {
 				clientSecret: paymentIntent.client_secret,
 				loading: false,
 			});
-		}
 		};
 		createPaymentIntent();
 	}, [cart]);
