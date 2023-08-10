@@ -7,6 +7,8 @@ JustDoughIt is a simple web application using React that includes features such 
 Run `npm install` to install the necessary node modules packages.<br>
 Run `npm run start` to start the app on http://localhost:4242
 
+Alternative, app is deployed on netlify - https://justdoughit.netlify.app/
+
 ### Technical Used
 - React created using vite
 - Firebase for data API
@@ -22,7 +24,7 @@ Users must be able to:
 
 # Planning and Development Process
 ### Problem-Solving Strategy 
-- Google for answers/guides
+- Google for answers/guidances
 
 ### Unsolved Problems 
 
