@@ -1,6 +1,6 @@
 # JustDoughIt
 
-JustDoughIt is a simple web application using React that includes features such as product listings, shopping carts, order management and user accounts. 
+JustDoughIt is a simple web application using React that includes features such as product listings, shopping carts, order management and payment. 
 
 # Description 
 
