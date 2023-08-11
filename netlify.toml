@@ -22,4 +22,5 @@
 
 [[redirects]]
 from = "/*"
-to = "/NotFound"
+to = "/index.html"
+status = 200

@@ -19,11 +19,11 @@ const Main = () => {
 				<Route path="/product/:productTitle" element={<Product />} />
 				<Route path="/search/:searchProduct" element={<Search />} />
 				<Route
-					path="/NotFound"
+					path="*"
 					element={<NotFound message={`Error 404 - Page Not Found!`} />}
 				/>
 				<Route exact path="/checkout" element={<Checkout />} />
-				<Route path="/order/:info" element={<OrderStatus />} />
+				<Route path="/order/" element={<OrderStatus />} />
 			</Routes>
 		</div>
 	);
