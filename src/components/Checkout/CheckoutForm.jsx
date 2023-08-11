@@ -19,7 +19,8 @@ const CheckoutForm = () => {
 		const { error } = await stripe.confirmPayment({
 			elements,
 			confirmParams: {
-				return_url: "http://localhost:4242/order",
+				// return_url: "http://localhost:4242/order",
+				return_url: "https://justdoughit.netlify.app/order",
 			},
 		});
 
