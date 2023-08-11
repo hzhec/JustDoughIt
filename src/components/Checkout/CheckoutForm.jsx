@@ -20,7 +20,7 @@ const CheckoutForm = () => {
 			elements,
 			confirmParams: {
 				// return_url: "http://localhost:4242/order",
-				return_url: "https://justdoughit.netlify.app/order",
+				return_url: "justdoughit.netlify.app/order",
 			},
 		});
 
