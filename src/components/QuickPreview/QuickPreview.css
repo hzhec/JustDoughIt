@@ -1,0 +1,165 @@
+.qp-details {
+	display: flex;
+}
+
+.qp-image {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.qp-image img {
+	width: 90%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.qp-info {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.qp-title {
+	width: 100%;
+	font-size: 35px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.qp-rating-container {
+	width: 100%;
+	grid-area: rating;
+	font-size: 25px;
+	display: grid;
+	grid-template-columns: 0.5fr 0.5fr;
+}
+
+.qp-rating {
+	text-align: right;
+	padding-right: 0;
+	margin: 0px 50px;
+}
+
+.qp-star {
+	position: relative;
+}
+
+.qp-star-background {
+	position: absolute;
+	color: rgba(0, 0, 0, 0.198);
+	z-index: 0;
+	font-size: 25px;
+	width: 125px;
+	left: -100px;
+}
+
+.qp-star-rating {
+	position: absolute;
+	/* justify-content: left; */
+	color: orange;
+	overflow-x: hidden;
+	z-index: 1;
+	font-size: 25px;
+	-webkit-text-stroke: 1px grey;
+	left: -100px;
+}
+
+.qp-price {
+	width: 100%;
+	display: inline;
+	text-align: center;
+}
+
+.qp-usual-price {
+	width: 100%;
+	margin-top: 15px;
+	font-size: 18px;
+}
+
+.qp-usual-price span {
+	text-decoration: line-through;
+}
+
+.qp-current-price {
+	width: 100%;
+	margin: 10px 0;
+	font-size: 20px;
+}
+
+.qp-add-to-cart {
+	width: 100%;
+	display: flex;
+	/* margin: 20px auto; */
+	align-items: center;
+}
+
+.qp-input-cart {
+	width: 50%;
+}
+
+.qp-input-cart input {
+	width: 80%;
+	height: 30px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.qp-button button {
+	margin: 15px auto 0 10px;
+	font-size: 15px;
+	border-radius: 10px;
+	background-color: rgb(255, 192, 125);
+	color: white;
+	border: 1px solid #ffab62;
+	width: 70%;
+	height: 30px;
+	cursor: pointer;
+}
+
+.qp-button button:hover,
+.qp-button button:active {
+	background-color: rgba(255, 255, 255, 0.9);
+	color: #ff7a15;
+}
+
+@media (min-width: 390px) and (max-width: 1500px) {
+	.qp-image {
+		width: 75%;
+	}
+
+	.qp-details {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.qp-info {
+		width: 100%;
+	}
+
+	.qp-title {
+		font-size: 28px;
+		margin: 5px 0;
+	}
+
+	.qp-rating-container {
+		width: 100%;
+	}
+
+	.qp-usual-price {
+		margin-top: 10px;
+		font-size: 15px;
+	}
+
+	.qp-current-price {
+		margin-top: 5px;
+		font-size: 18px;
+	}
+
+	.qp-input-cart input {
+		height: 30px;
+	}
+}

@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import CombinedContext from "../combined-context";
 import "./QuickPreview.css";
 import { useNavigate } from "react-router";
+import "./QuickPreview.css";
 
 const QuickPreview = (props) => {
 	const { cart } = useContext(CombinedContext);
