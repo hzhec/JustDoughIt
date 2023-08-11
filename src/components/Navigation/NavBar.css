@@ -6,7 +6,7 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 5px 10px;
-	z-index: 999;
+	z-index: 30;
 	width: 97%;
 	background: rgba(255, 242, 224, 0.725);
 }
